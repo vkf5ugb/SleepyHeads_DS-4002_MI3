@@ -28,7 +28,7 @@ o Link to data
 Relevant notes about use of data 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
-## REFERENCES section 
+## References
 o All references should be listed at the end of the Readme.md file (Use IEEE Documentation style (link)) 
 o Include any acknowledgements 
 o Include (by link) your MI1 and MI2 assignments
