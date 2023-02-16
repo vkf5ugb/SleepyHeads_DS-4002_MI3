@@ -17,8 +17,7 @@
 ### Make an H3 section for Installing/Building your code and Make an H3 section for Usage of your code
 
 ## DATA section (This one is tricky. Your data may (or not) fit in repo) 
-- Data Dictionary (use markdown table formatting) 
-
+Data Dictionary  
 | Column        | Description                                                     |
 | ------------- | -------------                                                   |
 | Text          | Full article text with no punctuation and all lowercase letters |
