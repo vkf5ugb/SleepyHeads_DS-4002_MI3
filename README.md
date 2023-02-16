@@ -38,4 +38,4 @@ o Include (by link) your MI1 and MI2 assignments
 
 [6]C. Bisaillon, “Fake and real news dataset,” Kaggle, 26-Mar-2020. [Online]. Available: https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv. [Accessed: 14-Feb-2023]. 
 
-[7]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023.Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
+[7]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023. Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
