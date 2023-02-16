@@ -1,4 +1,5 @@
 # SleepyHeads_DS-4002_MI3
+Adam Cook (leader), Quinn Glovier, Victoria Feist
 ## Contents
 - SRC
   * Installing/Building Code
@@ -14,25 +15,23 @@
 
 
 ## SRC section
-### Make an H3 section for Installing/Building your code and Make an H3 section for Usage of your code
+### Installing/Building Code 
+### Usage of Code
 
 ## DATA section (This one is tricky. Your data may (or not) fit in repo) 
-Data Dictionary  
+### Data Dictionary  
 | Column        | Description                                                     |
 | ------------- | -------------                                                   |
 | Text          | Full article text with no punctuation and all lowercase letters |
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 
 
-o Link to data
+### Link to data
 Relevant notes about use of data 
+
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
 ## References
-o All references should be listed at the end of the Readme.md file (Use IEEE Documentation style (link)) 
-o Include any acknowledgements 
-o Include (by link) your MI1 and MI2 assignments
-
 [1]	ACC Library Services. (2023, Jan. 23). Fake News and Alternative Facts: Finding          Accurate News: Why is Fake News Harmful? [Online]. Available:-https://researchguides.austincc.edu/c.php?g=612891&p=4258046. [Accessed February 7, 2023].
 
 [2]	Center for Information Technology and Society at UC Santa Barbara. (2018, Aug. 2). Why We Fall for Fake —----------News [Online]. Available:-https://www.cits.ucsb.edu/fake-news/why-we-fall. [Accessed February 7, 2023]
