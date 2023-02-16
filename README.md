@@ -23,7 +23,10 @@
 | ------------- | -------------                                                   |
 | Text          | Full article text with no punctuation and all lowercase letters |
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
-o Link to data Relevant notes about use of data 
+
+
+o Link to data
+Relevant notes about use of data 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
 ## REFERENCES section 
