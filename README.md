@@ -17,7 +17,12 @@
 ### Make an H3 section for Installing/Building your code and Make an H3 section for Usage of your code
 
 ## DATA section (This one is tricky. Your data may (or not) fit in repo) 
-o Data Dictionary (use markdown table formatting) 
+- Data Dictionary (use markdown table formatting) 
+
+| Column        | Description                                                     |
+| ------------- | -------------                                                   |
+| Text          | Full article text with no punctuation and all lowercase letters |
+| Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 o Link to data Relevant notes about use of data 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
