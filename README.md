@@ -19,15 +19,20 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 ### Usage of Code
 
 ## DATA section (This one is tricky. Your data may (or not) fit in repo) 
+### Original Data
+The original dataset before any cleaning: [Original Data](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv)
+- The data is separated into two csv's, fake and true, each of over 20,000 news articles.
+
+### Final Data
+
+The data after manipulation, ready to be used by the model: [Model_Data.csv](https://github.com/acook24/SleepyHeads_DS-4002_MI3/files/10794141/Model_Data.csv)
+
 ### Data Dictionary  
 | Column        | Description                                                     |
 | ------------- | -------------                                                   |
 | Text          | Full article text with no punctuation and all lowercase letters |
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 
-
-### Link to data
-Relevant notes about use of data 
 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
