@@ -19,15 +19,20 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 ### Usage of Code
 
 ## DATA section (This one is tricky. Your data may (or not) fit in repo) 
+### Original Data
+The original dataset before any cleaning: [Original Data](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv)
+- The data is separated into two csv's, fake and true, each of over 20,000 news articles.
+
+### Final Data
+
+The data after manipulation, ready to be used by the model: [Model_Data.csv](https://github.com/acook24/SleepyHeads_DS-4002_MI3/files/10794141/Model_Data.csv)
+
 ### Data Dictionary  
 | Column        | Description                                                     |
 | ------------- | -------------                                                   |
 | Text          | Full article text with no punctuation and all lowercase letters |
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 
-
-### Link to data
-Relevant notes about use of data 
 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
 
@@ -44,4 +49,6 @@ Relevant notes about use of data
 
 [6]C. Bisaillon, “Fake and real news dataset,” Kaggle, 26-Mar-2020. [Online]. Available: https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv. [Accessed: 14-Feb-2023]. 
 
-[7]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023. Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
+[7]T. Yiu, “Understanding random forest,” Medium, 29-Sep-2021. [Online]. Available: https://towardsdatascience.com/understanding-random-forest-58381e0602d2#:~:text=The%20random%20forest%20is%20a,that%20of%20any%20individual%20tree. [Accessed: 14-Feb-2023]. 
+
+[8]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023. Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
