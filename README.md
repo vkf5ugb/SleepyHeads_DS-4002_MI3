@@ -44,4 +44,6 @@ Relevant notes about use of data
 
 [6]C. Bisaillon, “Fake and real news dataset,” Kaggle, 26-Mar-2020. [Online]. Available: https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv. [Accessed: 14-Feb-2023]. 
 
-[7]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023. Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
+[7]T. Yiu, “Understanding random forest,” Medium, 29-Sep-2021. [Online]. Available: https://towardsdatascience.com/understanding-random-forest-58381e0602d2#:~:text=The%20random%20forest%20is%20a,that%20of%20any%20individual%20tree. [Accessed: 14-Feb-2023]. 
+
+[8]Cook, Adam, Feist, Victoria, Glovier, Quinn. “Detecting Misinformation: Milestone 2,” 7-Feb-2023. Available:https://docs.google.com/document/d/1vt-xL_zc_DKJPt1OahjVKtb6iz_EKf0JVSAVTI3pj9g/edit
