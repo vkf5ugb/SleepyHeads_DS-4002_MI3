@@ -1,17 +1,13 @@
 # SleepyHeads_DS-4002_MI3
 Adam Cook (leader), Quinn Glovier, Victoria Feist
-## Contents: This repository contains all the source code and data necessary to run a random forest machine learning model to identify fake news:
-- SRC
-  * Installing/Building Code
-  * Usage of Code
-- Data
-  * Dataset
-  * Data Dictionary
-  * Notes
+## Contents of Repository 
+This repository contains all the source code and data necessary to run a random forest machine learning model to identify fake news.
+- SRC Folder
+  * Contains annotated R code file
+- Data File Folder
+  * Contains method of accessing orginal csv files (Original Data) and cleaned data csv (Model_Data).
 - Figures
-  * Contents
-- References
-
+  * Contains 4 figures
 
 ## SRC
 #### Necessary Packages
