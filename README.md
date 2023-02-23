@@ -15,7 +15,7 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 
 ## Source Code
 #### Necessary Packages
-
+```{r}
 library(dplyr)
 library(tidyverse)
 library(ggplot2)
@@ -28,6 +28,7 @@ library(rio)
 library(plotly)
 library(caret)
 library(pROC)
+```
 
 #### Usage of Code
 - Download the fake and true .csv's from the original data link and save them 
