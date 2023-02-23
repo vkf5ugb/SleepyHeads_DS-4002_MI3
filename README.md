@@ -6,8 +6,12 @@ This repository contains all the source code and data necessary to run a random 
   * Contains annotated R code file
 - Data File Folder
   * Contains method of accessing orginal csv files (Original Data) and cleaned data csv (Model_Data).
-- Figures
+- Figures Folder
   * Contains 4 figures
+- LICENSE.md
+  * Statement of MIT License
+- README.md
+  * Explains contents of repository and process of project execution
 
 ## SRC
 #### Necessary Packages
