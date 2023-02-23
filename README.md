@@ -52,12 +52,16 @@ The data after manipulation, ready to be used by the model: [Model_Data.csv](htt
 
 
 ## Figures
+Histogram showing the prevalence of fake and real news in the dataset
 <img width="1200" alt="Frequency of Fake News in Data" src="https://user-images.githubusercontent.com/98351076/220919896-1c6ea529-3f33-420b-bbb3-1d18b811285f.png">
 
+This figure shows how the model reduces its error rate in identifying both fake and real news as it increases its amount of decision trees
 ![Error Rate of Random Forest Model](https://user-images.githubusercontent.com/98351076/220920370-39c13c95-9823-4a70-92e9-b178fb8baa64.png)
 
+Figures showing which words played the largest role in differentiating fake news. 
 <img width="1198" alt="Variable Importance Plot" src="https://user-images.githubusercontent.com/98351076/220920505-4c188984-c5c2-412d-b1d5-e8dee07073d2.png">
 
+ROC curve shows that the model resulted in a very high true positive rate 
 <img width="1040" alt="ROC Curve Plot" src="https://user-images.githubusercontent.com/98351076/220920559-1a639eb2-7a4a-4d62-9b0b-63e1e28ed0ca.png">
 
 
