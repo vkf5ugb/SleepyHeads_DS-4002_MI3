@@ -35,6 +35,14 @@ The data after manipulation, ready to be used by the model: [Model_Data.csv](htt
 
 
 ## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
+<img width="1200" alt="Frequency of Fake News in Data" src="https://user-images.githubusercontent.com/98351076/220919896-1c6ea529-3f33-420b-bbb3-1d18b811285f.png">
+
+![Error Rate of Random Forest Model](https://user-images.githubusercontent.com/98351076/220920370-39c13c95-9823-4a70-92e9-b178fb8baa64.png)
+
+<img width="1198" alt="Variable Importance Plot" src="https://user-images.githubusercontent.com/98351076/220920505-4c188984-c5c2-412d-b1d5-e8dee07073d2.png">
+
+<img width="1040" alt="ROC Curve Plot" src="https://user-images.githubusercontent.com/98351076/220920559-1a639eb2-7a4a-4d62-9b0b-63e1e28ed0ca.png">
+
 
 ## References
 [1]	ACC Library Services. (2023, Jan. 23). Fake News and Alternative Facts: Finding          Accurate News: Why is Fake News Harmful? [Online]. Available:-https://researchguides.austincc.edu/c.php?g=612891&p=4258046. [Accessed February 7, 2023].
