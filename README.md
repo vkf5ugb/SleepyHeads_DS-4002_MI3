@@ -13,7 +13,7 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 - References
 
 
-## SRC
+## Source Code
 #### Necessary Packages
 
 library(dplyr)
@@ -37,7 +37,7 @@ library(pROC)
 - Run all the code in order to prepare the data, run the model, and evaluate the results
 
 
-## DATA 
+## Data 
 ### Original Data
 The original dataset before any cleaning: [Original Data](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv)
 - The data is separated into two csv's, fake and true, each of over 20,000 news articles.
