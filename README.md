@@ -1,6 +1,6 @@
 # SleepyHeads_DS-4002_MI3
 Adam Cook (leader), Quinn Glovier, Victoria Feist
-## Contents
+## Contents: This repository contains all the source code and data necessary to run a random forest machine learning model to identify fake news:
 - SRC
   * Installing/Building Code
   * Usage of Code
