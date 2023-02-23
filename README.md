@@ -1,30 +1,37 @@
 # SleepyHeads_DS-4002_MI3
 Adam Cook (leader), Quinn Glovier, Victoria Feist
-## Contents
-- SRC
-  * Installing/Building Code
-  * Usage of Code
-- Data
-  * Dataset
-  * Data Dictionary
-  * Notes
-- Figures
-  * Contents
-- References
 
 
+## SRC
+#### Necessary Packages
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tm)
+library(SnowballC)
+library(tidyverse)
+library(randomForest)
+library(rio)
+library(plotly)
+library(caret)
+library(pROC)
+```
+#### Usage of Code
+- Download the fake and true .csv's from the original data link and save them 
+- Open the code file in RStudio and ensure your working directory is the folder that contains the data
+- Install necessary packages
+- Clear the variables by clicking the broom icon
+- Run all the code in order to prepare the data, run the model, and evaluate the results
+- 
 
-## SRC section
-### Installing/Building Code 
-### Usage of Code
-
-## DATA section (This one is tricky. Your data may (or not) fit in repo) 
+## DATA 
 ### Original Data
 The original dataset before any cleaning: [Original Data](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv)
 - The data is separated into two csv's, fake and true, each of over 20,000 news articles.
 
 ### Final Data
-
 The data after manipulation, ready to be used by the model: [Model_Data.csv](https://github.com/acook24/SleepyHeads_DS-4002_MI3/files/10794141/Model_Data.csv)
 
 ### Data Dictionary  
@@ -34,7 +41,7 @@ The data after manipulation, ready to be used by the model: [Model_Data.csv](htt
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 
 
-## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
+## FIGURES
 
 ## References
 [1]	ACC Library Services. (2023, Jan. 23). Fake News and Alternative Facts: Finding          Accurate News: Why is Fake News Harmful? [Online]. Available:-https://researchguides.austincc.edu/c.php?g=612891&p=4258046. [Accessed February 7, 2023].
