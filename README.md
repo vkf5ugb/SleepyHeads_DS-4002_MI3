@@ -13,10 +13,29 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 - References
 
 
+## SRC
+#### Necessary Packages
 
-## SRC section
-### Installing/Building Code 
-### Usage of Code
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tm)
+library(SnowballC)
+library(tidyverse)
+library(randomForest)
+library(rio)
+library(plotly)
+library(caret)
+library(pROC)
+
+#### Usage of Code
+- Download the fake and true .csv's from the original data link and save them 
+- Open the code file in RStudio and ensure your working directory is the folder that contains the data
+- Install necessary packages
+- Clear the variables by clicking the broom icon
+- Run all the code in order to prepare the data, run the model, and evaluate the results
+
 
 ## DATA 
 ### Original Data
