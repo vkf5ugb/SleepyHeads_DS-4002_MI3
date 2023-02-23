@@ -18,7 +18,7 @@ Adam Cook (leader), Quinn Glovier, Victoria Feist
 ### Installing/Building Code 
 ### Usage of Code
 
-## DATA section (This one is tricky. Your data may (or not) fit in repo) 
+## DATA 
 ### Original Data
 The original dataset before any cleaning: [Original Data](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=True.csv)
 - The data is separated into two csv's, fake and true, each of over 20,000 news articles.
