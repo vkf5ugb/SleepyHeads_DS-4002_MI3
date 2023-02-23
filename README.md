@@ -34,7 +34,7 @@ The data after manipulation, ready to be used by the model: [Model_Data.csv](htt
 | Type          | Classifies the article as true or fake (0 = true, 1 = fake)     |
 
 
-## FIGURES section This will be in progress when MI3 is complete and finished during MI4 
+## Figures
 <img width="1200" alt="Frequency of Fake News in Data" src="https://user-images.githubusercontent.com/98351076/220919896-1c6ea529-3f33-420b-bbb3-1d18b811285f.png">
 
 ![Error Rate of Random Forest Model](https://user-images.githubusercontent.com/98351076/220920370-39c13c95-9823-4a70-92e9-b178fb8baa64.png)
