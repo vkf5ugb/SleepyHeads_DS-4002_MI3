@@ -1,0 +1,239 @@
+---
+title: "DS 4002: Project 1 Code"
+author: "Quinn Glovier, Tori Feist, Adam Cook"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Loading in Libraries 
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tm)
+library(SnowballC)
+library(tidyverse)
+library(randomForest)
+library(rio)
+library(plotly)
+library(caret)
+library(pROC)
+```
+
+
+###Data Cleaning and Preparation
+
+#Reading in the two datasets 
+```{r}
+f <- read_csv("Fake.csv")
+t <- read_csv("True.csv")
+```
+
+#Since the two datasets have the same columns, they can be bound to combine them into one
+```{r}
+df <- rbind(f, t)
+```
+
+#Using each category's distinct subjects to add a column that distinguishes each article as real or fake, removing NA's, and saving the new dataset to be used in the model 
+```{r}
+true_cats <- c('politicsNews', 'worldnews')
+false_cats <- c('News', 'politics', 'left-news', 'Government News', 'US_News')
+
+df <- mutate(df, type = case_when(df$subject %in% true_cats ~ 0,
+                                  df$subject %in% false_cats ~ 1))
+
+View(df)
+df <- subset(df, !is.na(df$type))
+table(df$type)
+
+write.csv(df, "newcombined.csv", row.names=FALSE)
+```
+
+
+#Creating a preliminary plot to view how much real and fake news there is in the dataset 
+```{r}
+ggplot(df, aes(type,))+
+  geom_bar(fill = "blue")+
+  ylab("Number of Articles")+
+  xlab("Article Type")+
+  labs(title = "Frequency of Fake News in the Data")
+
+```
+
+
+###Data Manipulation for Model Compatibility
+
+#Our dataset is enormous, so a subset of it can be used in the model for efficiency 
+```{r}
+df1 <- sample_n(df, 5000)
+df1 <- subset(df1, select = c(text, type))
+df1
+```
+
+#Using the corpus package to format the text column into a more easily-manipulated object 
+```{r}
+corpus = Corpus(VectorSource(df1$text))
+```
+
+#Modifying the text - making it all lower case, with no punctuation, no unneccesary stopwords, and reducing each word to its stem
+```{r}
+corpus <- tm_map(corpus, PlainTextDocument)
+corpus <- tm_map(corpus, tolower)
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeWords, stopwords("english"))
+corpus <- tm_map(corpus, stemDocument)
+
+```
+
+#Creating a large matrix of the absence or presence of each word in each article 
+```{r}
+frequencies <- DocumentTermMatrix(corpus)
+```
+
+#Getting rid of words that are not in 99.5% of articles
+```{r}
+frequencies <- removeSparseTerms(frequencies, 0.995)
+```
+
+#Turning the matrix into a dataframe and putting the type column back in
+```{r}
+df2 = as.data.frame(as.matrix(frequencies))
+colnames(df2) = make.names(colnames(df2))
+df2$val <- sample(0:1,size=nrow(df2),replace=TRUE)
+```
+
+#This shows the ratio of real to fake news in the dataset. This is the baseline accuracy for the model. Since the values of the target variable are in almost equal proportions, it is expected the model will have accuracy higher than this baseline
+```{r}
+prop.table(table(df2$val))
+```
+
+###Random Forest Classification
+
+#Splitting the Data
+```{r}
+#the first time I tried to create a factor table, R said that there were three duplicated columns, so I am going to remove these columns
+df2 <- df2[, -c(53,610,1493)]
+
+#Turning the rows into factors so they will be more compatible with Random Forest
+df2_factors <- as_tibble(lapply(df2, as.factor))
+sample_rows <- 1:nrow(df2_factors)
+
+#Splitting the Data. I am setting a seed so that it splits at the same place every time
+set.seed(2000)
+testrows = sample(sample_rows,
+                  dim(df2)[1]*.75,
+                  replace = FALSE)
+
+df_train = df2_factors[-testrows,]
+df_test = df2_factors[testrows,]
+```
+
+#Creating the Random Forest Model
+```{r}
+#Function gives us what mytry value we should use when running Random Forest
+#My try represents the number of variables considered when making a new branch to a decision tree. The standard method for estimating mytry for classification models is the square root of the number of variables.
+mytry_tune <- function(x){
+  xx <- dim(x)[2]-1
+  sqrt(xx)
+}
+mytry_tune(df2)
+#The function reccomends we set the number to 61, so lets go with that!
+
+#RF Model:
+set.seed(2001)
+df2_RF <- randomForest(as.factor(val)~., #Sets what the response variable and the predictors are. The period means to consider all other variables
+                       df_train, #The data set to be used
+                       ntree = 5000, #The number of decision trees the model will make
+                       mytry = 61, #Mytry, explained above
+                       replace = TRUE, #We are allowing sampled points to be reused
+                       sampsize = 100, #Size of the sample to be used for each tree
+                       nodesize = 5, #Minimum number of data points to be selected for each classification level
+                       importance = TRUE, #Gives us the importance of each variable for classification
+                       proximity = FALSE, #Proximity measure between rows, not necessary for this
+                       norm.votes = TRUE, #Results are given as fractions
+                       do.trace = TRUE, #Gives a more descriptive output
+                       keep.forest = TRUE, #Keeps the forest in the output
+                       keep.inbag = TRUE #Keeps track of which samples are used for each tree
+                       )
+
+df2_RF
+```
+
+#Examiming the Results
+```{r}
+#Confusion Matrix displaying the results the results
+df2_RF$confusion
+#Error Rate for false predictions: 2.22% (13 false negatives)
+#Error Rate for true predictions: 1.05% (7 false positives)
+
+#Determining the Accuracy
+df2_RF_acc = sum(df2_RF$confusion[row(df2_RF$confusion) == 
+                    col(df2_RF$confusion)]) /sum(df2_RF$confusion)
+df2_RF_acc #98.39%, very good!
+
+#Examining the importance of each variable for classification, also shows mean decreased accuracy and mean decreased gini
+View(as.data.frame(df2_RF$importance))
+#Looks like the word "reuter" was the most important variable for most classifications. This makes sense because the news company Reuters is esteemed for having high-quality and accurate journalism. A fake article would be very unlikely to cite Reuters as a source.
+```
+
+#Further interpretation
+```{r}
+#Examining the error rate
+df2_RF_error = data.frame(1:nrow(df2_RF$err.rate),
+                                df2_RF$err.rate)
+colnames(df2_RF_error) = c("Number of Trees", "Out of the Box",
+                                 "False", "True")
+df2_RF_error$Diff <- df2_RF_error$True-df2_RF_error$False
+df2_RF_error
+
+#Visualizing the Error Rate
+fig <- plot_ly(x=df2_RF_error$`Number of Trees`, y=df2_RF_error$Diff,name="Diff", type = 'scatter', mode = 'lines')
+fig <- fig %>% add_trace(y=df2_RF_error$`Out of the Box`, name="OOB_Er")
+fig <- fig %>% add_trace(y=df2_RF_error$False, name="False", line = list(color = "red"))
+fig <- fig %>% add_trace(y=df2_RF_error$True, name="True", line = list(color = "green"))
+fig <- fig %>% layout(title  = "Error Rate of Decision Tree Model",
+                      xaxis = list(title = "Number of Trees"),
+                      yaxis = list(title = "Error Rate"))
+
+fig
+
+```
+
+#Visualization: Variable Importance
+```{r}
+varImpPlot(df2_RF,
+           sort = TRUE,
+           n.var = 10,
+           main = "Important Factors for Determining the Authenticity of News Articles",
+           bg = "white",
+           color = "blue",
+           lcolor = "pink")
+```
+#Predictions
+```{r}
+df_predict <- predict(df2_RF,
+                      df_test,
+                      val = "response",
+                      predict.all = TRUE)
+str(df_predict)
+
+
+confusionMatrix(as.factor(df_predict$aggregate),as.factor(df_test$type),positive = "1", 
+                dnn=c("Prediction", "Actual"), mode = "everything")
+#Results:
+#Accuracy: 98.37%, Sensitivity: 99.01%, Specificity: 97.70%
+#Zero Predictions: 1787 predicted correctly, 19 predicted incorrectly
+#One Predictions: 1902 predicted correctly, 42 predicted incorrectly
+```
+
+#ROC Curve
+```{r}
+#ROC Curves display the true positive versus the false positive rate, with the diagonal line representing the 50% threshold
+df2_roc <- roc(df_predict$aggregate, as.numeric(df_test$val), plot = TRUE)
+```
+
